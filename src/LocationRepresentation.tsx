@@ -54,7 +54,7 @@ const LocationRepresentation = (props:DataObject) => {
              setMain([info.main])
              setWind([info.wind])
         })
-    },[])
+    },[apiKey, data])
     
     
   return (
