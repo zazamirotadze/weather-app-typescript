@@ -1,24 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import LocationRepresentation from "./LocationRepresentation";
 function App() {
+
+ 
+  let tsrikvaliData = [42.345548, 43.277142, "წირქვალი"]
+  let tbilisiData = [41.719024, 44.786648, "თბილისი"]
+  let kutaisiData = [42.267241, 42.709247, "ქუთაისი"]
+
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LocationRepresentation data={tsrikvaliData}/>
+      <LocationRepresentation data={tbilisiData}/>
+      <LocationRepresentation data={kutaisiData}/>
     </div>
   );
 }
