@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { FaSun, FaCloud, FaCloudRain, FaSnowflake} from 'react-icons/fa';
-
+import { BsCloudFog2} from 'react-icons/bs';
 
 
 interface DataObject {
@@ -26,8 +26,8 @@ interface mainData {
 }
 
 interface windData{
-    speed: 3.09;
-    deg: 190
+    speed: number;
+    deg: number
 }
 
 
@@ -68,6 +68,7 @@ const LocationRepresentation = (props:DataObject) => {
                 case "Clouds": return <FaCloud size={"100px"} color={"#3F3E51"} />;
                 case "Rain": return <FaCloudRain size={"100px"} color={"#1B1B56"} />; 
                 case "Snow": return <FaSnowflake size={"100px"} color={"cyan"} />;
+                case "Mist": return <BsCloudFog2 size={"100px"} color={"grey"} />;
                 default: return null;
             }
             })()

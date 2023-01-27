@@ -1,6 +1,8 @@
 import LocationRepresentation from "./LocationRepresentation";
-function App() {
 
+
+function App() {
+  
  
   let tsrikvaliData = [42.345548, 43.277142, "წირქვალი"]
   let tbilisiData = [41.719024, 44.786648, "თბილისი"]
