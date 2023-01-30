@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import { FaSun, FaCloud, FaCloudRain, FaSnowflake} from 'react-icons/fa';
-import { BsCloudFog2} from 'react-icons/bs';
+import { BsCloudFog2, BsMoonStarsFill} from 'react-icons/bs';
 
 
 interface DataObject {
@@ -37,6 +37,9 @@ interface windData{
 
 
 const LocationRepresentation = (props:DataObject) => {
+    const date = new Date();
+    const currentHour = date.getHours();
+    
 
     const [weather, setWeather] = useState<WeatherData[]>([])
     const [main, setMain] = useState<mainData[]>([])
@@ -64,7 +67,9 @@ const LocationRepresentation = (props:DataObject) => {
         <div>{weather.length > 0 
         ? (() => {
             switch (weather[0].main) {
-                case "Clear": return <FaSun  size={"100px"} color={"#F69307"} />;
+                case "Clear": 
+                    return  currentHour>19?<BsMoonStarsFill  size={"100px"} color={"#F69307"} />:
+                    <FaSun  size={"100px"} color={"#F69307"} />;
                 case "Clouds": return <FaCloud size={"100px"} color={"#3F3E51"} />;
                 case "Rain": return <FaCloudRain size={"100px"} color={"#1B1B56"} />; 
                 case "Snow": return <FaSnowflake size={"100px"} color={"cyan"} />;
