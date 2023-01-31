@@ -69,7 +69,7 @@ const LocationRepresentation = (props:DataObject) => {
         ? (() => {
             switch (weather[0].main) {
                 case "Clear": 
-                    return  currentHour>19?<BsMoonStarsFill  size={"100px"} color={"#F69307"} />:
+                    return  currentHour>18?<BsMoonStarsFill  size={"100px"} color={"#F69307"} />:
                     <FaSun  size={"100px"} color={"#F69307"} />;
                 case "Clouds": return <FaCloud size={"100px"} color={"#3F3E51"} />;
                 case "Rain": return <FaCloudRain size={"100px"} color={"#1B1B56"} />; 
