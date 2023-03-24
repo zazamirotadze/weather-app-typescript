@@ -1,6 +1,5 @@
 import LocationRepresentation from "./LocationRepresentation";
 
-
 function App() {
   
  

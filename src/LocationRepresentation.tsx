@@ -3,6 +3,7 @@ import { FaSun, FaCloud, FaCloudRain, FaSnowflake} from 'react-icons/fa';
 import { BsCloudFog2, BsMoonStarsFill, BsFillCloudDrizzleFill, BsCloudFogFill} from 'react-icons/bs';
 
 
+
 interface DataObject {
     data: (number | string)[];
 }
@@ -46,8 +47,7 @@ const LocationRepresentation = (props:DataObject) => {
     const [wind, setWind] = useState<windData[]>([])
 
     const data = props.data
-    let apiKey = "5f60561b8fb957012217042709a97a33"
-
+    const apiKey = process.env.REACT_APP_API_KEY
     
     useEffect(()=>{
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${data[0]}&lon=${data[1]}&appid=${apiKey}`)
@@ -69,7 +69,7 @@ const LocationRepresentation = (props:DataObject) => {
         ? (() => {
             switch (weather[0].main) {
                 case "Clear": 
-                    return  currentHour>=0 && currentHour<7 ||currentHour>18?<BsMoonStarsFill  size={"100px"} color={"#F69307"} />:
+                    return  (currentHour>=0 && currentHour)<7 ||currentHour>18?<BsMoonStarsFill  size={"100px"} color={"#F69307"} />:
                     <FaSun  size={"100px"} color={"#F69307"} />;
                 case "Clouds": return <FaCloud size={"100px"} color={"#3F3E51"} />;
                 case "Rain": return <FaCloudRain size={"100px"} color={"#1B1B56"} />; 
