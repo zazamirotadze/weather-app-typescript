@@ -2,10 +2,64 @@ body{
     background-color: #F9F57C;
 }
 
-
-
 .card{
     border: 5px solid white;
     padding: 20px;
     background-color: #f8f5a6;
+}
+
+.notShown{
+    display: none;
+}
+
+.menu{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px; 
+}
+
+.menu > div{
+    position: relative; 
+}
+
+.options-container {
+    z-index: 1;   
+    position: absolute;
+    width: 100%; 
+}
+
+
+.menu-button{
+    all: unset; 
+    background-color: orangered;
+    cursor: pointer;
+    color: white;
+    padding: 15px 10px; 
+    border-radius: 4px;
+}
+
+.option {
+    background-color: orangered;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.option:hover {
+    background-color: crimson;
+    
+}
+
+.option:active {
+    background-color: crimson; 
+}
+
+.info {
+    background-color: orangered;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
 }
